@@ -1,1 +1,92 @@
 # LINUX-BASIC
+## 1. Nguồn gốc của Unix
+- Khái niệm Unix
+    - Unix là một hệ điều hành máy tính đa năng được viết vào những năm ***1960*** tại ***Bell Labs*** bởi một nhóm các nhà khoa học.
+    - Ban đầu, hệ điều hành này chỉ được sử dụng trong hệ thống Bell của AT&T.
+    - Nhưng sau đó, công ty này đã cấp phép Unix cho các đơn vị bên ngoài. Từ đó hình thành một loạt biến thể của hệ điều hành Unix và phát triển đến ngày nay
+    - Có thể kể đến các biến thể nổi tiếng như BSD, Xenix, macOS X và Linux.
+## 2. Linux là gì? Bắt nguồn từ đâu? Sự khác biệt cơ bản giữa Linux và Windows.
+- Linux là gì?
+    - Linux là một họ các hệ điều hành tự do nguồn mở tương tự Unix và dựa trên Linux kernel.
+- Bắt nguồn từ đâu?
+    - Năm 1991, khi theo học tại Đại học Helsinki, Torvalds trở nên tò mò về hệ điều hành. Thất vọng vì việc cấp phép MINIX, lúc đó chỉ giới hạn sử dụng cho mục đích giáo dục, ông bắt đầu làm việc với nhân hệ điều hành của chính mình, cuối cùng trở thành Linux. 
+    - Torvalds đã bắt đầu phát triển nhân Linux trên MINIX và các ứng dụng được viết cho MINIX cũng được sử dụng trên Linux.
+    - Sau đó, Linux trưởng thành và việc phát triển nhân Linux được tiếp tục trên các hệ thống Linux.
+- Sự khác biệt cơ bản giữa Linux và Windows:
+    - Truy cập
+        - __Linux__ người dùng có quyền truy cập vào mã nguồn của kernel và thay đổi mã theo nhu cầu của mình. Ưu điểm riêng của Linux như các lỗi trong HĐH sẽ được khắc phục với tốc độ nhanh và nhược điểm là các nhà phát triển có thể tận dụng bất kỳ điểm yếu nào trong HĐH nếu họ tìm thấy.
+        - __Windows__ mỗi người dùng sẽ không có quyền truy cập vào mã nguồn, chỉ có các thành viên của nhóm được lựa chọn mới có quyền truy cập vào nó.
+    - Sự đa dạng
+        - __Linux__ có nhiều bản phân phối khác nhau tùy theo nhu cầu của người dùng.
+        - __Windows__ có rất nhiều tùy chọn tùy chỉnh có sẵn.
+    - Giấy phép
+        - __Linux__ với hệ điều hành được cấp phép GPL, người dùng có thể tự do sửa đổi phần mềm, có thể sử dụng lại trong bất kỳ hệ thống nào và thậm chí họ có thể bán phiên bản sửa đổi.
+        - __Windows__ với giấy phép của Microsoft, người dùng sẽ không có quyền truy cập vào mã nguồn (không thể sửa đổi phần mềm) và dựa số lượng giấy phép – mới có thể cài đặt trên máy tính.
+    - Dòng lệnh
+        - __Linux__ dòng lệnh là một công cụ rất hữu ích để quản trị và thực hiện các công việc hàng ngày, nhưng đối với người dùng cuối, nó không tạo ra nhiều khác biệt.
+        - __Windows__ chúng ta có dòng lệnh nhưng có thể sử dụng như dòng lệnh Linux. Chúng ta cần chạy và nhập cmd thì dòng lệnh sẽ mở.
+    - Mức độ chạy
+        - __Linux__ có khả năng dừng ở các cấp độ chạy khác nhau. Với điều này, chúng ta có thể làm việc bằng cách sử dụng một dòng lệnh và GUI nếu có ai đó gặp sự cố.
+        - __Windows__ nếu chúng ta gặp phải bất kỳ sự cố nào để khắc phục sự cố, bắt buộc phải khởi động lại ở cấp 3 với tư cách quản trị viên để tìm và khắc phục sự cố.
+    - Khả năng sử dụng
+        - __Linux__ rất phức tạp để cài đặt nhưng có khả năng hoàn thành các tác vụ phức tạp dễ dàng hơn.
+        - __Windows__ cung cấp cho người dùng một hệ thống đơn giản để vận hành nhưng sẽ mất nhiều thời gian hơn để cài đặt.
+    - Hỗ trợ
+        - __Linux__ có hỗ trợ thông qua một cộng đồng lớn các diễn đàn / trang web người dùng và tìm kiếm trực tuyến.
+        - __Windows__ có hỗ trợ dễ dàng truy cập, các diễn đàn / trang web trực tuyến và có cả hỗ trợ trả phí.
+    - Cập nhật
+        - __Linux__ người dùng có toàn quyền kiểm soát các bản cập nhật, chúng tôi có thể cài đặt bất cứ khi nào chúng tôi cần và sẽ mất ít thời gian hơn mà không cần khởi động lại.
+        - __Windows__ các bản cập nhật sẽ đến vào những thời điểm bất tiện như bạn đang in một bản in cho máy in nhưng đột nhiên bản cập nhật bật lên sẽ khiến người dùng bực bội và mất nhiều thời gian hơn để cài đặt.
+    - Bảo mật
+        - __Linux__ an toàn hơn so với __Windows__, tin tặc hoặc nhà phát triển vi-rút sẽ khó xâm nhập vào Linux.
+        - __Windows__ là mục tiêu chính của các nhà phát triển virus và phần mềm độc hại và nó rất dễ xâm nhập nếu không có phần mềm chống vi-rút.
+## 3. Các bản phân phối nổi bật Linux. Tìm hiểu về bản phân phối RHEL và Centos. Tìm hiểu về giấy phép trong Linux và chu kỳ phát triển của một bản phân phối
+- Các bản phân phối nổi bật Linux.
+    - Các bản phân phối Linux phổ biến bao gồm __Debian, Fedora, và Ubuntu__. Các bản phân phối thương mại bao gồm __Red Hat Enterprise Linux và SUSE Linux Enterprise Server__. Bản phân phối Desktop Linux bao gồm một windowing system như __X11 hoặc Wayland__, và một môi trường desktop giống như __GNOME hay KDE Plasma__.
+- Tìm hiểu về bản phân phối RHEL và Centos.
+    - Khái niệm RHEL.
+        - RHEL là gì?
+            - __Red Hat Enterprise Linux (RHEL)__ là một bản phân phối Linux được phát triển bởi Red Hat và mục tiêu hướng tới thị trường thương mại.
+            - __Red Hat Enterprise Linux__ được phát hành cho các phiên bản máy chủ x86, x86-64, Itanium, PowerPC và IBM System z, và các phiên bản máy tính để bàn cho x86 và x86-64.
+        - Nguồn gốc của RHEL
+            - Phiên bản đầu tiên của Red Hat Enterprise Linux phân phối ra thị trường được mang tên ___"Red Hat Linux Advanced Server"___
+            - Năm 2003 Red Hat đổi thương hiệu **Red Hat Linux Advanced Server** thành ***"Red Hat Enterprise Linux AS"***, và bổ sung thêm hai biến thể, __Red Hat Enterprise Linux ES__ và __Red Hat Enterprise Linux WS__.
+    - Khái niệm Centos.
+        - Centos là gì?
+            - __CentOS__ là một hệ điều hành Linux dựa trên mã nguồn mở của Red Hat Enterprise Linux (RHEL).
+            - Tên gọi **"CentOS"** được viết tắt từ cụm từ **"Community ENTerprise Operating System".**
+        - Tổng hợp các phiên bản của CentOS
+            - CentOS 2: Phiên bản đầu tiên của CentOS, được phát hành vào năm 2004. Nó dựa trên Red Hat Enterprise Linux 2.
+            - CentOS 5: Một bản phát hành quan trọng được hỗ trợ lâu dài, được phát hành vào năm 2007. Nền tảng cung cấp nhiều cải tiến về hiệu suất và tính ổn định.
+            - CentOS 6: Phát triển hành động vào năm 2010, CentOS 6 mở rộng các tính năng và công nghệ mới, nhất là với bản cập nhật cốt lõi của hệ điều hành.
+            - CentOS 7: Là một trong những bản phát hành quan trọng nhất, CentOS 7 ra mắt vào năm 2014 với cải tiến đáng kể về hiệu suất, bảo mật và hỗ trợ phần cứng mới.
+            - CentOS 8: Là phiên bản mới nhất, được phát hành vào năm 2019. CentOS 8 mang đến sự cải tiến về công nghệ, bảo mật và hiệu suất.
+- Tìm hiểu về giấy phép trong Linux và chu kỳ phát triển của một bản phân phối
+    - ### Tìm hiểu về giấy phép trong Linux
+        - 
+    - ### Quá trình phát triển của Centos.
+        - **CentOS** (Hệ điều hành Enterprise cộng đồng) được phát triển dựa trên mã nguồn mở của **Red Hat Enterprise Linux (RHEL)**. Đây là một dự án cộng đồng được bắt đầu vào năm 2004.
+        - Ban đầu, các phiên bản CentOS được xây dựng trực tiếp từ mã nguồn của RHEL và không có những thay đổi đáng kể.
+        - Sau này, với sự phát triển và mở rộng của cộng đồng người dùng đã giúp CentOS đã trở thành một dự án độc lập.
+        - Nền tảng nổi bật với nhiều lựa chọn đa dạng, khả năng mở rộng các tính năng riêng chứ không chỉ là một bản sao chép của RHEL.
+        - Năm 2014, Red Hat đã mua lại CentOS và công bố một chiến lược hợp lý chặt chẽ hơn giữa CentOS và RHEL.
+## 4. Tìm hiểu các tổ chức, website phát triển các dự án liên quan đến Linux và các bản phân phối. Các website liên quan đến đóng góp, fix lỗi bug, đóng góp code.
+- ### **Tổ chức phát triển Linux**
+    - **The Linux Foundation**: Đây là tổ chức chính hỗ trợ phát triển Linux và nhiều dự án mã nguồn mở khác. Họ tổ chức các khóa học, sự kiện và phát triển các dự án lớn như Kubernetes.
+    - **Debian Project**: Dự án Debian là một trong những bản phân phối Linux lâu đời và có cộng đồng rất mạnh. Họ có hệ thống quản lý lỗi (Debian Bug Tracking System) cho phép người dùng báo cáo và theo dõi lỗi.
+    - **Fedora Project**: Fedora là một bản phân phối Linux do cộng đồng hỗ trợ và có nhiều cơ hội để đóng góp mã. Họ có một trang web riêng cho việc báo cáo lỗi và phát triển.
+    - Ubuntu Community: Cộng đồng Ubuntu cũng rất phát triển và cung cấp nhiều cơ hội cho người dùng đóng góp mã, báo cáo lỗi và tham gia vào các dự án.
+- ### **Trang web đóng góp**
+    - **GitHub**: Nhiều dự án mã nguồn mở, bao gồm cả Linux và các bản phân phối, được lưu trữ trên GitHub. Bạn có thể tìm kiếm các dự án và tham gia vào việc đóng góp mã hoặc sửa lỗi.
+    - **GitLab**: Tương tự như GitHub, GitLab là nơi nhiều dự án mã nguồn mở được phát triển và bạn có thể tham gia vào việc đóng góp.
+    - **SourceForge**: Một nền tảng cũ hơn nhưng vẫn còn sử dụng cho một số dự án mã nguồn mở.
+    - **Open Source Initiative (OSI)**: Tổ chức này không chỉ cấp phép cho các dự án mã nguồn mở mà còn cung cấp thông tin về cách tham gia và đóng góp.
+- ### **Hệ thống báo cáo lỗi và đóng góp mã**
+    - **Bugzilla**: Nhiều dự án, như Mozilla và Fedora, sử dụng Bugzilla để theo dõi lỗi và đóng góp.
+    - **Redmine**: Một số dự án mã nguồn mở sử dụng Redmine để quản lý lỗi và nhiệm vụ.
+    - **Launchpad**: Là công cụ quản lý dự án và phát triển phần mềm được Ubuntu sử dụng, cho phép người dùng báo cáo lỗi và đóng góp mã.
+- ### **Các trang tài liệu và hướng dẫn**
+    - **Kernel Newbies**: Cung cấp hướng dẫn cho những người mới bắt đầu tham gia phát triển Linux kernel.
+    - **Linux Documentation Project**: Tập hợp tài liệu, hướng dẫn và thông tin hữu ích cho người dùng và nhà phát triển Linux.
+    - **FreeCodeCamp và các khóa học trực tuyến**: Nơi bạn có thể học về Linux và các công nghệ mã nguồn mở thông qua các khóa học miễn phí.
+## 5. Cấu trúc kernel và quá trình khởi động trong Linux và các INIT Level

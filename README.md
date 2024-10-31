@@ -7,7 +7,7 @@
     - Có thể kể đến các biến thể nổi tiếng như BSD, Xenix, macOS X và Linux.
 ## 2. Linux là gì? Bắt nguồn từ đâu? Sự khác biệt cơ bản giữa Linux và Windows.
 - Linux là gì?
-    - Linux là một họ các hệ điều hành tự do nguồn mở tương tự Unix và dựa trên Linux kernel.
+    - **Linux** là một họ các hệ điều hành tự do nguồn mở tương tự Unix và dựa trên Linux kernel.
 - Bắt nguồn từ đâu?
     - Năm 1991, khi theo học tại Đại học Helsinki, Torvalds trở nên tò mò về hệ điều hành. Thất vọng vì việc cấp phép MINIX, lúc đó chỉ giới hạn sử dụng cho mục đích giáo dục, ông bắt đầu làm việc với nhân hệ điều hành của chính mình, cuối cùng trở thành Linux. 
     - Torvalds đã bắt đầu phát triển nhân Linux trên MINIX và các ứng dụng được viết cho MINIX cũng được sử dụng trên Linux.
@@ -56,14 +56,28 @@
             - __CentOS__ là một hệ điều hành Linux dựa trên mã nguồn mở của Red Hat Enterprise Linux (RHEL).
             - Tên gọi **"CentOS"** được viết tắt từ cụm từ **"Community ENTerprise Operating System".**
         - Tổng hợp các phiên bản của CentOS
-            - CentOS 2: Phiên bản đầu tiên của CentOS, được phát hành vào năm 2004. Nó dựa trên Red Hat Enterprise Linux 2.
-            - CentOS 5: Một bản phát hành quan trọng được hỗ trợ lâu dài, được phát hành vào năm 2007. Nền tảng cung cấp nhiều cải tiến về hiệu suất và tính ổn định.
-            - CentOS 6: Phát triển hành động vào năm 2010, CentOS 6 mở rộng các tính năng và công nghệ mới, nhất là với bản cập nhật cốt lõi của hệ điều hành.
-            - CentOS 7: Là một trong những bản phát hành quan trọng nhất, CentOS 7 ra mắt vào năm 2014 với cải tiến đáng kể về hiệu suất, bảo mật và hỗ trợ phần cứng mới.
-            - CentOS 8: Là phiên bản mới nhất, được phát hành vào năm 2019. CentOS 8 mang đến sự cải tiến về công nghệ, bảo mật và hiệu suất.
+            - **CentOS 2**: Phiên bản đầu tiên của CentOS, được phát hành vào năm 2004. Nó dựa trên Red Hat Enterprise Linux 2.
+            - **CentOS 5**: Một bản phát hành quan trọng được hỗ trợ lâu dài, được phát hành vào năm 2007. Nền tảng cung cấp nhiều cải tiến về hiệu suất và tính ổn định.
+            - **CentOS 6**: Phát triển hành động vào năm 2010, CentOS 6 mở rộng các tính năng và công nghệ mới, nhất là với bản cập nhật cốt lõi của hệ điều hành.
+            - **CentOS 7**: Là một trong những bản phát hành quan trọng nhất, CentOS 7 ra mắt vào năm 2014 với cải tiến đáng kể về hiệu suất, bảo mật và hỗ trợ phần cứng mới.
+            - **CentOS 8**: Là phiên bản mới nhất, được phát hành vào năm 2019. CentOS 8 mang đến sự cải tiến về công nghệ, bảo mật và hiệu suất.
 - Tìm hiểu về giấy phép trong Linux và chu kỳ phát triển của một bản phân phối
     - ### Tìm hiểu về giấy phép trong Linux
-        - 
+        - #### Giấy phép GNU General Public License (GPL)
+            - **Phiên bản**: GPL có nhiều phiên bản, phổ biến nhất là GPLv2 và GPLv3.
+            - **Điều khoản**: GPL yêu cầu bất kỳ phần mềm nào dựa trên mã nguồn GPL cũng phải được phát hành dưới cùng một giấy phép. Điều này có nghĩa là người dùng có quyền sửa đổi, sử dụng, và phân phối phần mềm, nhưng phải giữ mã nguồn mở cho các phiên bản sau.
+            - **Sử dụng**: Nhiều bản phân phối Linux, như Debian và Ubuntu, sử dụng giấy phép GPL cho kernel và các phần mềm liên quan.
+        - #### Giấy phép MIT
+            - **Đặc điểm**: Rất đơn giản và linh hoạt. Người dùng có quyền sử dụng, sao chép, chỉnh sửa, và phân phối phần mềm mà không có nhiều hạn chế.
+            - **Tính năng**: Phổ biến trong cộng đồng mã nguồn mở, vì nó không yêu cầu phát hành mã nguồn của phần mềm đã sửa đổi.
+        - #### Giấy phép Apache
+            - **Đặc điểm**: Tương tự như MIT nhưng có thêm các điều khoản bảo vệ quyền sở hữu trí tuệ.
+            - **Điều khoản**: Cho phép sửa đổi và phân phối, nhưng yêu cầu ghi nhận tác giả ban đầu và cung cấp bản sao giấy phép khi phân phối.
+        - #### Giấy phép BSD
+            - **Loại**: Có nhiều biến thể, nhưng nhìn chung là rất mở.
+            - **Điều khoản**: Cho phép sử dụng, sao chép và phân phối với ít hạn chế. Một số biến thể yêu cầu ghi nhận tác giả.
+        - #### Giấy phép Creative Commons
+            - Sử dụng: Thường không được sử dụng cho phần mềm, mà chủ yếu cho nội dung như văn bản, hình ảnh, và video.
     - ### Quá trình phát triển của Centos.
         - **CentOS** (Hệ điều hành Enterprise cộng đồng) được phát triển dựa trên mã nguồn mở của **Red Hat Enterprise Linux (RHEL)**. Đây là một dự án cộng đồng được bắt đầu vào năm 2004.
         - Ban đầu, các phiên bản CentOS được xây dựng trực tiếp từ mã nguồn của RHEL và không có những thay đổi đáng kể.

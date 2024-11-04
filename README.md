@@ -289,4 +289,55 @@
     - man -I, –match-case : Tìm kiếm chính xác chữ hoa chữ thường
     - man -a, –all : Hiển thị tất cả các trang hướng dẫn khớp với từ khóa hoặc lệnh cụ thể
 ## 9. Câu lệnh làm việc với tập tin như đọc, ghi,.. (liệt kê tất cả có thể)
-- 
+- `cat`: đọc file
+- `vi`: sửa file
+- `vim`: sửa file
+- `cd`: di chuyển thư mục
+- `ls`: show file và thư mục trong thư mục hiện tại
+- `pwd`: show đường dẫn hiện tại đang làm việc
+- `top`: hiển thị trang thái cấu hình
+- `df`: hiển thị dung lượng trên ổ cứng
+- `passwd` đổi pass user
+
+## 10. Tìm hiểu về nhóm người dùng trong Linux
+- ### Khái niệm về nhóm người dùng
+    - **Người dùng (User)**: Là một cá nhân hoặc tiến trình có thể đăng nhập và sử dụng hệ thống. Mỗi người dùng có một tên đăng nhập (username) và một mã số định danh (user ID - UID).
+    - **Nhóm (Group)**: Là một tập hợp của một hoặc nhiều người dùng. Nhóm giúp tổ chức và quản lý quyền truy cập cho nhiều người dùng cùng một lúc. Mỗi nhóm có một tên và một mã số định danh (group ID - GID).
+- ### Vai trò của nhóm người dùng
+    - **Quản lý quyền truy cập**: Nhóm giúp đơn giản hóa việc cấp quyền cho nhiều người dùng. Thay vì cấp quyền cho từng người dùng riêng lẻ, bạn có thể cấp quyền cho cả nhóm.
+    - **Chia sẻ tài nguyên**: Các thành viên trong cùng một nhóm có thể chia sẻ tệp tin và thư mục dễ dàng hơn.
+- ### Các loại nhóm
+    - **Nhóm chính (Primary Group)**: Mỗi người dùng chỉ có một nhóm chính, được chỉ định khi tạo tài khoản. Nhóm này thường là nhóm mà người dùng thuộc về.
+    - **Nhóm phụ (Secondary Group)**: Người dùng có thể thuộc về nhiều nhóm phụ. Điều này cho phép người dùng có quyền truy cập vào các tài nguyên mà các nhóm khác sở hữu.
+- ### Quản lý nhóm người dùng
+    - **Xem thông tin người dùng và nhóm**
+        - **cat /etc/passwd**: Hiển thị danh sách người dùng cùng với UID và nhóm chính.
+        - **cat /etc/group**: Hiển thị danh sách các nhóm và các thành viên trong từng nhóm.
+    - **Tạo nhóm**
+        - **Lệnh**: `groupadd [tên nhóm]`
+            - Ví dụ: 
+                ```
+                groupadd IT
+                ```
+    - **Thêm người dùng vào nhóm**
+        - **Lệnh**: `usermod -aG [tên nhóm] [tên người dùng]`
+            - Ví dụ:
+                ```
+                sudo usermod -aG IT user1
+                ```
+    - **Xóa nhóm**
+        - **Lệnh**: `groupdel [tên nhóm]`
+            - Ví Dụ:
+                ```
+                groupdel IT
+                ```
+- ### Quyền truy cập và nhóm
+    - **Mỗi tệp tin và thư mục trong Linux có ba loại quyền truy cập**:
+        - **Read (r)**: Quyền đọc.
+        - **Write (w)**: Quyền ghi.
+        - **Execute (x)**: Quyền thực thi.
+    - **Quyền truy cập được chia cho ba loại người**:
+        - **Người sở hữu (Owner)**: Người dùng tạo ra tệp tin.
+        - **Nhóm (Group)**: Nhóm mà tệp tin thuộc về.
+        - **Khác (Others)**: Những người dùng không thuộc về người sở hữu hoặc nhóm.
+## 11. Tìm hiểu về người dùng trong User. Các loại người dùng trong Linux. Với mỗi loại họ có quyền gì trong hệ thống.

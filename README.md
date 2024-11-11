@@ -341,3 +341,42 @@
         - **Nhóm (Group)**: Nhóm mà tệp tin thuộc về.
         - **Khác (Others)**: Những người dùng không thuộc về người sở hữu hoặc nhóm.
 ## 11. Tìm hiểu về người dùng trong User. Các loại người dùng trong Linux. Với mỗi loại họ có quyền gì trong hệ thống.
+- ### Root (Superuser)
+    - **Tên người dùng**: root
+    - **Quyền hạn**:
+        - Root là người dùng có toàn quyền kiểm soát tất cả các tài nguyên của hệ thống, bao gồm thay đổi cấu hình hệ thống, quản lý các tài khoản người dùng, cài đặt phần mềm, và truy cập vào mọi tập tin trên hệ thống.
+        - Root có thể thực thi mọi lệnh và có khả năng làm thay đổi hệ thống mà không bị giới hạn.
+        - Người dùng root có quyền đọc, ghi, và thay đổi mọi thứ trên hệ thống, kể cả các tệp hệ thống và tệp người dùng khác.
+- ### Normal User (Người dùng bình thường)
+    - **Tên người dùng**: Không cố định, người dùng có thể có tên tùy chỉnh.
+    - **Quyền hạn**:
+        - Người dùng bình thường chỉ có quyền truy cập vào thư mục và tài nguyên mà họ sở hữu. Họ không thể thay đổi hoặc truy cập vào các tệp của người dùng khác nếu không có sự cấp quyền.
+        - Người dùng bình thường có thể thực thi các chương trình và ứng dụng trong phạm vi quyền hạn của mình, chẳng hạn như thay đổi cấu hình cá nhân, chỉnh sửa các tệp cá nhân, hoặc chạy các ứng dụng mà họ được phép.
+        - Họ không thể thay đổi các cài đặt hệ thống hoặc thực hiện các hành động ảnh hưởng đến toàn bộ hệ thống.
+- ### Sudoers
+    - **Tên người dùng**: Các người dùng hoặc nhóm được cấp quyền `sudo`
+    - **Quyền hạn**:
+        - Các người dùng hoặc nhóm trong danh sách sudoers có thể thực thi các lệnh với quyền root mà không cần đăng nhập với tài khoản root. Điều này giúp duy trì tính bảo mật trong khi cho phép người dùng thực hiện các tác vụ quản trị cần thiết.
+        - Quyền `sudo` có thể được cấp cho từng người dùng hoặc nhóm thông qua tệp cấu hình `/etc/sudoers`.
+        - Người dùng `sudo` không có quyền root đầy đủ như root, nhưng có thể tạm thời thực hiện các lệnh quản trị với quyền cao nhất bằng cách sử dụng lệnh `sudo`.
+- ### System Users (Người dùng hệ thống)
+    - **Tên người dùng**: Các tài khoản người dùng hệ thống thường không liên quan đến các người dùng tương tác với hệ thống, ví dụ: `daemon`, `www-data`, `nobody`, `mysql`, `ftp`.
+    - **Quyền hạn**:
+        - Những người dùng này có quyền hạn hạn chế và thường được sử dụng cho các dịch vụ hệ thống như máy chủ web, máy chủ cơ sở dữ liệu, hoặc dịch vụ FTP.
+        - Họ không được phép truy cập vào hệ thống với các quyền thông thường và thường chỉ có quyền đọc và ghi vào các tệp cấu hình hoặc thư mục mà dịch vụ của họ yêu cầu.
+        - Người dùng hệ thống này giúp cô lập các dịch vụ và bảo vệ hệ thống khỏi các lỗ hổng bảo mật.
+- ### Guest User (Người dùng khách)
+    - **Tên người dùng**: Tài khoản người dùng khách có thể được tạo ra để cho phép người dùng tạm thời truy cập vào hệ thống mà không yêu cầu đăng nhập chính thức.
+    - **Quyền hạn**:
+        - Quyền hạn của người dùng khách thường bị giới hạn rất nhiều, chỉ có quyền truy cập vào các tệp và ứng dụng cần thiết cho mục đích tạm thời.
+        - Các tệp và dữ liệu của người dùng khách thường không được lưu lại sau khi họ đăng xuất.
+    
+    |Loại Người Dùng     |Quyền Hạn                                                                             |
+    |--------------------|--------------------------------------------------------------------------------------|
+    |Root (Superuser)    |Toàn quyền hệ thống, thay đổi cấu hình hệ thống, quản lý người dùng, cài đặt phần mềm.|
+    |Normal User         |Quyền hạn giới hạn vào các tài nguyên cá nhân, không thể thay đổi cấu hình hệ thống.  |
+    |Sudoers             |Có thể thực thi các lệnh với quyền root, nhưng không phải là root trực tiếp.          |
+    |System Users        |Tài khoản hệ thống có quyền hạn hạn chế, phục vụ các dịch vụ hệ thống.                |
+    |Guest User          |Quyền hạn cực kỳ hạn chế, chỉ sử dụng tạm thời và không lưu lại dữ liệu cá nhân.      |
+
+## 12. Tìm hiểu về phân quyền trong Linux. Phân quyền cơ bản trong filesystem. Trong Linux thư mục nào được phân quyền mặc định 777 .

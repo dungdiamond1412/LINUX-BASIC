@@ -380,3 +380,46 @@
     |Guest User          |Quyền hạn cực kỳ hạn chế, chỉ sử dụng tạm thời và không lưu lại dữ liệu cá nhân.      |
 
 ## 12. Tìm hiểu về phân quyền trong Linux. Phân quyền cơ bản trong filesystem. Trong Linux thư mục nào được phân quyền mặc định 777 .
+- ### Phân quyền trong Linux
+    - Phân quyền trong Linux là cơ chế bảo mật dùng để kiểm soát quyền truy cập vào tệp và thư mục trên hệ thống. Mỗi tệp hoặc thư mục đều có ba loại quyền chính (read, write, execute) áp dụng cho ba đối tượng:
+        - **Chủ sở hữu (Owner)**: Người tạo ra tệp/thư mục, mặc định là người sở hữu.
+        - **Nhóm (Group)**: Một nhóm người dùng có thể chia sẻ quyền với nhau.
+        - **Người khác (Others)**: Tất cả người dùng khác ngoài chủ sở hữu và nhóm.
+- ### Các quyền cơ bản trong Linux
+    - **Read (r)**: Quyền đọc nội dung tệp hoặc danh sách thư mục.
+    - **Write (w)**: Quyền ghi, sửa đổi nội dung tệp hoặc tạo/tùy chỉnh tệp con trong thư mục.
+    - **Execute (x)**:
+        - Với tệp: Quyền thực thi (chạy) tệp như một chương trình.
+        - Với thư mục: Quyền truy cập vào các tệp hoặc thư mục con bên trong.
+
+    Quyền của một tệp/thư mục được hiển thị dưới dạng 10 ký tự. Ví dụ:
+
+        -rwxr-xr--
+
+    Trong đó:
+    - Ký tự đầu tiên (d hoặc -) cho biết loại tệp: `-` (tệp thường), `d` (thư mục), `l` (liên kết mềm).
+    - 9 ký tự còn lại chia thành 3 nhóm:
+        - Chủ sở hữu: `rwx`
+        - Nhóm: `r-x`
+        - Người khác: `r--`
+- ### Hệ thống phân quyền số (Octal)
+    - Các quyền trong Linux cũng được biểu diễn bằng các con số:
+        - `r = 4`, `w = 2`, `x = 1`
+        - Tổng hợp quyền:
+            - `7 = rwx` (đầy đủ quyền)
+            - `6 = rw-` (đọc và ghi)
+            - `5 = r-x` (đọc và thực thi)
+            - `4 = r--` (chỉ đọc)
+            - `0 = ---` (không có quyền)
+- ### Phân quyền mặc định của thư mục
+    - Mặc định, Linux sử dụng lệnh `umask` để xác định quyền mặc định của tệp và thư mục khi được tạo.
+        - Với tệp: Quyền mặc định là `666` (không cho phép thực thi), sau đó trừ đi `umask`.
+        - Với thư mục: Quyền mặc định là `777`, sau đó trừ đi `umask`.
+- ### Thư mục nào có quyền mặc định 777?
+    - Một số thư mục đặc biệt trong Linux được phân quyền mặc định 777:
+        - Thư mục `/tmp`:
+            - Được dùng để lưu trữ tệp tạm thời, các ứng dụng có thể tạo và sử dụng.
+            - Quyền `777` cho phép tất cả người dùng đọc, ghi và truy cập. Tuy nhiên, để bảo mật, thuộc tính "Sticky Bit" (`t`) được bật, khiến người dùng chỉ có thể xóa tệp của chính họ.
+        - Thư mục `/var/tmp`:
+            - Tương tự như /tmp nhưng thường lưu trữ dữ liệu tạm thời lâu hơn.
+## 13. Tìm hiểu về phân quyền nâng cao : SUID, SGID, Sticky Bit. Và chỉ số umask

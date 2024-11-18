@@ -423,3 +423,29 @@
         - Thư mục `/var/tmp`:
             - Tương tự như /tmp nhưng thường lưu trữ dữ liệu tạm thời lâu hơn.
 ## 13. Tìm hiểu về phân quyền nâng cao : SUID, SGID, Sticky Bit. Và chỉ số umask
+- ### SUID (Set User ID)
+    - **SUID** là một quyền đặc biệt được thiết lập trên tệp tin thực thi. Khi một tệp tin có SUID, người dùng thực thi tệp tin đó sẽ tạm thời có quyền của chủ sở hữu tệp tin (thường là root).
+    - **Ví dụ**: Nếu bạn thực thi một chương trình có SUID là root, bạn sẽ có quyền truy cập tương tự như root, mặc dù bạn là người dùng bình thường. Điều này có thể giúp thực thi các tác vụ cần quyền truy cập cao hơn mà không cần cấp quyền root cho người dùng.
+    - **Cách thiết lập**: 
+        - Sử dụng lệnh chmod: `chmod u+s filename`
+    - **Ví dụ**: Tệp /usr/bin/passwd có thể có SUID để người dùng bình thường có thể thay đổi mật khẩu của mình mà không cần quyền root.
+- ### SGID (Set Group ID)
+    - **SGID** là một quyền đặc biệt cho phép tệp tin hoặc thư mục có hành vi tương tự như SUID nhưng đối với nhóm thay vì người dùng. Khi một tệp tin có SGID, khi người dùng thực thi tệp tin đó, nhóm quyền của tệp sẽ là nhóm của tệp chứ không phải nhóm của người dùng.
+    - **Tệp tin**: Tương tự như SUID, khi SGID được thiết lập cho một tệp tin thực thi, chương trình sẽ chạy với quyền nhóm của chủ sở hữu tệp.
+    - **Thư mục**: Khi SGID được thiết lập cho một thư mục, tất cả các tệp tin mới tạo trong thư mục đó sẽ thuộc về nhóm của thư mục, không phải nhóm của người tạo tệp tin.
+    - **Cách thiết lập**: 
+        - Sử dụng lệnh chmod: `chmod g+s filename_or_directory`
+- ### Sticky Bit
+    - **Sticky Bit** thường được thiết lập trên các thư mục, đặc biệt là thư mục /tmp, để ngăn người dùng xóa hoặc thay đổi các tệp tin của người khác trong thư mục đó.
+    - Khi một thư mục có Sticky Bit, chỉ có chủ sở hữu của tệp tin hoặc thư mục, hoặc người dùng root mới có quyền xóa hoặc đổi tên các tệp tin bên trong thư mục đó.
+    - **Ví dụ**: Thư mục /tmp trên hệ thống thường có Sticky Bit để đảm bảo rằng người dùng không thể xóa tệp của người dùng khác.
+    - **Cách thiết lập**: 
+        - Sử dụng lệnh chmod: `chmod +t directory`
+- ### umask (User Mask)
+    - **umask** là một giá trị được sử dụng để xác định các quyền mặc định của tệp tin và thư mục khi chúng được tạo ra.
+    - **umask** xác định quyền truy cập nào sẽ bị từ chối khi tạo tệp tin. Thông qua umask, bạn có thể xác định quyền của tệp tin hoặc thư mục mới, ví dụ như tệp tin mới có thể có quyền đọc, ghi, thực thi (rwx) đối với người sở hữu, nhóm, và người khác.
+    - **Cách hoạt động**: Một giá trị umask là sự khấu trừ từ quyền mặc định. Quyền mặc định cho tệp tin là 666 (rw-rw-rw-), và quyền mặc định cho thư mục là 777 (rwxrwxrwx).
+    - **Ví dụ**: Nếu umask được thiết lập là `022`, quyền mặc định của tệp tin mới sẽ là `644` (rw-r--r--), và quyền của thư mục sẽ là `755` (rwxr-xr-x).
+    - **Cách kiểm tra và thiết lập umask**:
+        - Kiểm tra umask hiện tại: `umask`
+        - Thiết lập umask mới: `umask 022`

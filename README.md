@@ -202,18 +202,18 @@
     - **Thư mục gốc /**
         - Đây là thư mục gốc (root directory) của hệ thống. Tất cả các thư mục khác đều nằm dưới thư mục này.
     - **Thư mục con chính trong /**
-        - `/bin`: Chứa các tệp thực thi (binaries) của các lệnh cơ bản mà người dùng có thể sử dụng, như `ls`, `cp`, `mv`, và `cat`.
+        - **`/bin`: Chứa các tệp thực thi (binaries) của các lệnh cơ bản mà người dùng có thể sử dụng, như `ls`, `cp`, `mv`, và `cat`.**
         - `/boot`: Chứa các tệp cần thiết để khởi động hệ thống, bao gồm kernel và các tệp cấu hình liên quan đến quá trình khởi động.
         - `/dev`: Chứa các tệp thiết bị (device files) đại diện cho các thiết bị phần cứng như ổ đĩa, ổ USB, và các thiết bị ngoại vi.
-        - `/etc`: Chứa các tệp cấu hình cho hệ thống và các ứng dụng. Ví dụ: `passwd`, `fstab`, `hosts`.
-        - `/home`: Chứa thư mục người dùng. Mỗi người dùng sẽ có thư mục con của mình trong thư mục này, thường được đặt theo tên người dùng (ví dụ: `/home/user`).
+        - **`/etc`: Chứa các tệp cấu hình cho hệ thống và các ứng dụng. Ví dụ: `passwd`, `fstab`, `hosts`.**
+        - **`/home`: Chứa thư mục người dùng. Mỗi người dùng sẽ có thư mục con của mình trong thư mục này, thường được đặt theo tên người dùng (ví dụ: `/home/user`).**
         - `/lib`: Chứa các thư viện (libraries) cần thiết cho các chương trình trong `/bin` và `/sbin`.
         - `/media`: Thư mục tạm thời để gắn kết (mount) các thiết bị lưu trữ di động, như USB hoặc đĩa CD/DVD.
         - `/mnt`: Thư mục tạm thời để gắn kết các hệ thống tệp. Thường được sử dụng bởi quản trị viên hệ thống.
         - `/opt`: Chứa các ứng dụng phần mềm tùy chọn và các gói phần mềm bổ sung mà không phải là một phần của hệ thống chính.
         - `/proc`: Chứa thông tin về các tiến trình đang chạy và trạng thái hệ thống. Đây là hệ thống tệp ảo, không thực sự lưu trữ trên đĩa.
         - `/root`: Thư mục chính của người dùng root (superuser). Đây là tài khoản quản trị viên của hệ thống.
-        - `/sbin`: Chứa các tệp thực thi của các lệnh hệ thống và quản trị, thường chỉ được sử dụng bởi quản trị viên.
+        - **`/sbin`: Chứa các tệp thực thi của các lệnh hệ thống và quản trị, thường chỉ được sử dụng bởi quản trị viên.**
         - `/srv`: Chứa dữ liệu cho các dịch vụ mà hệ thống cung cấp (ví dụ: tệp web cho server web).
         - `/sys`: Thư mục hệ thống ảo cung cấp thông tin về thiết bị phần cứng và kernel.
         - `/tmp`: Thư mục chứa tệp tin tạm thời. Các tệp ở đây có thể bị xóa khi khởi động lại hệ thống.
@@ -221,7 +221,8 @@
             - `/usr/bin`: Chứa các tệp thực thi cho người dùng.
             - `/usr/lib`: Chứa thư viện cho các chương trình trong `/usr/bin`.
             - `/usr/share`: Chứa các tệp chia sẻ như tài liệu và mẫu.
-        - `/var`: Chứa các tệp dữ liệu có kích thước thay đổi thường xuyên, như nhật ký (logs), tệp tin tạm, và cơ sở dữ liệu.
+        - **`/var`: Chứa các tệp dữ liệu có kích thước thay đổi thường xuyên, như nhật ký (logs), tệp tin tạm, và cơ sở dữ liệu.**
+    - chức năng của nhưng file log 
 ## 7. Hiểu cấu trúc thư mục cây trong linux, khái niệm về đường dẫn, sử dụng các lệnh cơ bản thao tác với 1 thư mục `cd`, `pwd`, `ls`. Trong Linux các thư mục, socket ... thực chất là gì ? 
 - ### Hiểu cấu trúc thư mục cây trong linux, khái niệm về đường dẫn, sử dụng các lệnh cơ bản thao tác với 1 thư mục `cd`, `pwd`, `ls`.
     - #### Hiểu cấu trúc thư mục cây trong linux
@@ -294,6 +295,8 @@
 - `vim`: sửa file
 - `cd`: di chuyển thư mục
 - `ls`: show file và thư mục trong thư mục hiện tại
+- `echo`: ghi vào file
+- `find`: tìm file
 - `pwd`: show đường dẫn hiện tại đang làm việc
 - `top`: hiển thị trang thái cấu hình
 - `df`: hiển thị dung lượng trên ổ cứng
@@ -449,3 +452,116 @@
     - **Cách kiểm tra và thiết lập umask**:
         - Kiểm tra umask hiện tại: `umask`
         - Thiết lập umask mới: `umask 022`
+## 14. Tìm hiểu các trình quản lý package trong ubuntu. Sự khác biệt giữa apt và dpkg là gì ?
+- ### Tìm hiểu các trình quản lý package trong ubuntu
+- Trong Ubuntu (cũng như các hệ điều hành dựa trên Debian), việc quản lý gói phần mềm (package management) là rất quan trọng để cài đặt, cập nhật và gỡ bỏ phần mềm trên hệ thống. Ubuntu sử dụng hệ thống quản lý gói APT (Advanced Packaging Tool) để xử lý việc cài đặt và quản lý phần mềm. Ngoài APT, còn có một số công cụ khác hỗ trợ quản lý phần mềm trên hệ thống Ubuntu.
+    - #### **APT (Advanced Packaging Tool)**
+        - APT là công cụ chính để quản lý gói phần mềm trong các hệ điều hành Debian-based, bao gồm Ubuntu. APT giúp dễ dàng cài đặt, cập nhật và gỡ bỏ phần mềm từ kho lưu trữ chính thức của Ubuntu.
+    - Các lệnh phổ biến trong APT:
+        - **Cài đặt gói phần mềm**: `sudo apt install <package_name>`
+        - **Cập nhật danh sách gói phần mềm** (từ kho lưu trữ): `sudo apt update`
+        - **Cập nhật tất cả gói phần mềm đã cài**: `sudo apt upgrade`
+        - **Cài đặt một phiên bản cụ thể của gói**: `sudo apt install <package_name>=<version_number>`
+        - **Gỡ bỏ gói phần mềm**: `sudo apt remove <package_name>`
+        - **Gỡ bỏ gói phần mềm và các tệp cấu hình liên quan**: `sudo apt purge <package_name>`
+        - **Dọn dẹp các gói không cần thiết** (dùng sau khi gỡ bỏ phần mềm): `sudo apt autoremove`
+        - **Tìm kiếm gói phần mềm**: `apt search <package_name>`
+        - **Hiển thị thông tin chi tiết của một gói phần mềm**: `apt show <package_name>`
+    - #### **dpkg (Debian Package Manager)**
+        - `dpkg` là công cụ quản lý gói cơ bản, thấp hơn so với APT. APT thực chất là một lớp giao diện cao hơn, sử dụng `dpkg` để cài đặt, gỡ bỏ và xử lý gói. `dpkg` không tự động xử lý kho lưu trữ, vì vậy bạn phải cung cấp gói cài đặt cụ thể (dưới dạng `.deb`).
+    - Các lệnh phổ biến trong `dpkg`:
+        - **Cài đặt gói** `.deb`: `sudo dpkg -i <package_file.deb>`
+        - **Gỡ bỏ gói phần mềm**: `sudo dpkg -r <package_name>`
+        - **Hiển thị thông tin chi tiết về gói**: `dpkg -s <package_name>`
+        - **Danh sách tất cả các gói đã cài đặt**: `dpkg -l`
+        - **Sửa chữa các gói bị hỏng** (nếu cài đặt với `dpkg` bị lỗi): `sudo apt --fix-broken install`
+    - #### **Snap**
+        - Snap là hệ thống quản lý gói mới của Ubuntu, được Canonical (nhà phát triển của Ubuntu) tạo ra để cung cấp các ứng dụng đóng gói và dễ dàng cài đặt trên mọi hệ điều hành Linux. Các gói Snap có thể chạy độc lập và không phụ thuộc vào các thư viện có sẵn trên hệ thống, giúp đơn giản hóa việc cài đặt phần mềm.
+    - Các lệnh phổ biến với Snap:
+        - **Cài đặt gói Snap**: `sudo snap install <package_name>`
+        - **Cập nhật tất cả gói Snap**: `sudo snap refresh`
+        - **Gỡ bỏ gói Snap**: `sudo snap remove <package_name>`
+        - **Liệt kê các gói Snap đã cài đặt**: `snap list`
+        - **Tìm kiếm gói Snap**: `snap find <package_name>`
+    - #### **Flatpak**
+        - **Flatpak** là một hệ thống quản lý gói tương tự như Snap, nhưng được phát triển bởi cộng đồng phần mềm mã nguồn mở. Flatpak cũng cung cấp các gói phần mềm độc lập, không phụ thuộc vào các thư viện hệ thống.
+    - Các lệnh phổ biến với Flatpak:
+        - **Cài đặt gói Flatpak**: `flatpak install <repository> <package_name>`
+        - **Cập nhật tất cả gói Flatpak**: `flatpak update`
+        - **Gỡ bỏ gói Flatpak**: `flatpak uninstall <package_name>`
+        - **Liệt kê các gói Flatpak đã cài đặt**: `latpak list`
+    - #### **PPA (Personal Package Archive)**
+        - PPA là kho phần mềm được cung cấp bởi các nhà phát triển hoặc cộng đồng, ngoài kho chính thức của Ubuntu. PPAs cho phép bạn cài đặt phần mềm không có sẵn trong kho lưu trữ chính thức của Ubuntu.
+    - Các lệnh phổ biến khi làm việc với PPA:
+        - **Thêm PPA vào hệ thống**: `sudo add-apt-repository ppa:<ppa_name>`
+        - **Cập nhật danh sách gói sau khi thêm PPA**: `sudo apt update`
+        - **Gỡ bỏ PPA**: `sudo add-apt-repository --remove ppa:<ppa_name>`
+    - #### **Ubuntu Software Center**
+        - Ubuntu Software Center là giao diện đồ họa cho quản lý phần mềm trên Ubuntu. Bạn có thể sử dụng Ubuntu Software Center để cài đặt, cập nhật, và gỡ bỏ phần mềm mà không cần phải sử dụng dòng lệnh.
+            - Mở **Ubuntu Software Center** từ menu ứng dụng, sau đó tìm kiếm phần mềm mà bạn muốn cài đặt hoặc gỡ bỏ.
+- ### Sự khác biệt giữa apt và dpkg.
+    |Tiêu chí  	   |APT	                                                                                                |dpkg                            |
+    |--------------|----------------------------------------------------------------------------------------------------|--------------------------------|
+    |Mục đích chính|Quản lý kho phần mềm, cài đặt, cập nhật, và nâng cấp gói từ kho phần mềm (bao gồm cả các phụ thuộc).|Quản lý các gói `.deb` riêng biệt.|
+    |Quản lý kho phần mềm|Có, APT có thể tải và cài đặt gói phần mềm từ các kho phần mềm trực tuyến.|Không, dpkg chỉ làm việc với các gói `.deb` cục bộ. |
+    |Quản lý phụ thuộc|Tự động xử lý phụ thuộc khi cài đặt hoặc nâng cấp gói phần mềm.|Không tự động xử lý phụ thuộc, bạn cần cài đặt các gói phụ thuộc thủ công.|
+    |Cài đặt gói phần mềm|Cài đặt gói từ kho phần mềm hoặc từ PPA.|Cài đặt gói `.deb` cục bộ.|
+    |Cập nhật gói phần mềm|Hỗ trợ cập nhật tất cả các gói phần mềm hệ thống từ kho phần mềm.|Không hỗ trợ cập nhật từ kho phần mềm, chỉ làm việc với các gói đã có.|
+    |Quản lý nhiều gói cùng lúc|Có thể cài đặt, cập nhật và gỡ bỏ nhiều gói phần mềm cùng lúc.|Thường chỉ làm việc với một gói phần mềm mỗi lần.|
+    |Lỗi và khôi phục|Tự động xử lý các vấn đề về phụ thuộc và cung cấp các phương thức khôi phục khi có lỗi.|Không hỗ trợ khôi phục tự động, phải giải quyết vấn đề thủ công.|
+## 15. Tìm hiểu về Process trong Linux. Các loại process trên Linux (các lệnh quản lý process cơ bản: ps, sleep, kill, bg, fg,...)
+- ### Khái Niệm
+    - **Process** (tiến trình) trong Linux là một chương trình đang được thực thi. Mỗi process có một ID duy nhất gọi là **PID** (Process ID). Khi một chương trình được chạy, hệ điều hành sẽ tạo một process để quản lý và thực thi chương trình đó.
+- ### Các loại Process trong Linux
+    - **Parent Process**:
+        - Mỗi process trong Linux được tạo ra bởi một **parent process**.
+        - Parent process được nhận diện qua **PPID** (Parent Process ID).
+    - **Child Process**:
+        - Là process được tạo ra bởi một parent process.
+        - Sử dụng lệnh `fork()` để tạo child process.
+    - **Orphan Process**:
+        - Khi **parent process** kết thúc trước, child process trở thành orphan process và được quản lý bởi process **init** (PID = 1).
+    - **Zombie Process**:
+        - Khi một child process kết thúc nhưng parent process chưa gọi lệnh `wait()` để thu hồi thông tin.
+        - Zombie process không tiêu thụ tài nguyên nhưng vẫn giữ PID.
+    - **Daemon Process**:
+        - Là các tiến trình chạy ngầm để cung cấp các dịch vụ hệ thống (như `cron`, `sshd`).
+        - Thường không có giao diện người dùng trực tiếp.
+    - **Interactive Process**:
+        - Các process được người dùng khởi chạy trực tiếp từ terminal.
+    - **Batch Process**:
+        - Các process chạy theo lô (batch), thường không cần sự tương tác trực tiếp.
+- ### Quản lý Process bằng các lệnh cơ bản
+    - **Xem thông tin process**
+        - `ps`: Hiển thị thông tin các process đang chạy.
+        - `top`: Hiển thị process theo thời gian thực.
+        - `htop`: Giao diện đồ họa cho `top` (cần cài đặt thêm).
+    - **Khởi chạy và tạm dừng process**
+        - `sleep`: Tạo process ngủ trong một khoảng thời gian.
+        - `ctrl+z`: Tạm dừng (pause) process đang chạy trong terminal.
+        - `jobs`: Hiển thị danh sách các job đang chạy trong terminal.
+        - `bg`: Tiếp tục chạy process bị dừng ở chế độ nền.
+        - `fg`: Đưa process từ nền về foreground.
+    - **Kết thúc process**
+        - `kill`: Dừng một process dựa trên PID:
+            - `kill PID`
+            - `kill -9 PID`      # Gửi tín hiệu SIGKILL (dừng ngay lập tức)
+        - `pkill`: Dừng process theo tên.
+            - `pkill process_name`
+        - `killall`: Dừng tất cả các process theo tên.
+            - `killall process_name`
+        - `xkill`: Kết thúc một cửa sổ GUI (cần cài đặt).
+    - **Ưu tiên process**
+        - `nice`: Chạy process với mức ưu tiên được chỉ định.
+        - `renice`: Thay đổi mức ưu tiên của một process đang chạy.
+    - **Kiểm tra cấu trúc process**
+        - `pstree`: Hiển thị cấu trúc cây process.
+- ### Các tín hiệu (signal) thường dùng với lệnh `kill`
+    |Tín hiệu|Mã số|               Mô tả               |
+    |--------|-----|-----------------------------------|
+    |SIGTERM |15   |Dừng một cách nhẹ nhàng (mặc định).|
+    |SIGKILL |9    |Dừng ngay lập tức (không thể chặn).|
+    |SIGHUP  |1    |Khởi động lại process.             |
+    |SIGSTOP |19   |Tạm dừng process.                  |
+    |SIGCONT |18   |Tiếp tục process bị tạm dừng.      |
+## 16. Tìm hiểu về Ram ảo hay là  SWAP trong Linux. Chúng có thực sự hữu ích ?

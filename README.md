@@ -565,3 +565,24 @@
     |SIGSTOP |19   |Tạm dừng process.                  |
     |SIGCONT |18   |Tiếp tục process bị tạm dừng.      |
 ## 16. Tìm hiểu về Ram ảo hay là  SWAP trong Linux. Chúng có thực sự hữu ích ?
+- ### Swap là gì?
+    - **Swap hay còn được gọi là RAM ảo được sử dụng để hỗ trợ lưu trữ dữ liệu khi bộ nhớ vật lý (RAM) đã đầy**. Đôi khi SWAP cũng được dùng song song để tăng dung lượng bộ nhớ đệm. SWAP thường dùng trên các hệ điều hành Linux, Ubuntu hoặc CentOS.
+- ### Tại sao cần sử dụng Swap?
+    - Một trong những trường hợp quan trọng cần đến Swap là khi RAM đầy.
+- ### Khi nào cần sử dụng Swap?
+    - Khi dùng một phần mềm yêu cầu hệ thống có hỗ trợ bộ nhớ Swap trong phần cài đặt (ví dụ: Oracle).
+    - Khi muốn hoạt động của hệ thống ổn định hơn, đặc biệt quan trọng đối với các hệ thống không có nhiều dung lượng RAM.
+    - Có thể hiểu một cách đơn giản là: không bao giờ có thể lường trước được dung lượng bộ nhớ cho tất cả chương trình trên hệ điều hành. Vì vậy, khi sự cố xảy ra (đầy RAM), Swap sẽ làm nhiệm vụ duy trì tất cả các hoạt động bình thường dù tốc độ có phần chậm hơn thay vì dừng cả hệ thống.
+    - Nếu đang dùng Ubuntu, hệ điều hành này sẽ yêu cầu Swap cho chế độ ngủ đông.
+- ### Loại ổ cứng sử dụng Swap hiệu quả là gì?
+    - Swap được lấy đổi từ ổ cứng – tức chiếm đúng phần dung lượng của nó trong ổ cứng tương ứng. Chẳng hạn, nếu ổ cứng của bạn có dung lượng là 50GB, chọn cài Swap 10GB thì ổ cứng vật lý thực tế chỉ có thể sử dụng 40GB.
+    - Khi quyết định sử dụng Swap, bạn nên chọn loại ổ cứng có tốc độ đọc, ghi nhanh.
+- ### Kích thước SWAP là bao nhiêu?
+    - Nhìn chung, việc cài đặt Swap chỉ là một biện pháp dự phòng hết RAM bất ngờ. Cho nên, chỉ nên cài Swap với dung lượng tối đa bằng một nửa RAM thật.
+    - Swap có tốc độ xử lý chậm hơn RAM vật lý rất nhiều nên nếu VPS hoặc Server của bạn đang sử dụng chúng quá nhiều, thì đó là dấu hiệu cảnh báo để nâng cấp RAM.
+- ### Cách thêm bộ nhớ Swap trên Ubuntu/CentOS Linux
+    - Thêm bộ nhớ Swap trên Ubuntu hoặc CentOS Linux gồm 4 bước thực hiện. Các bạn sẽ cần sử dụng câu lệnh Swap với tài khoản root hoặc tài khoản user có quyền sudo.
+    - #### Kiểm tra bộ nhớ Swap hiện tại của hệ thống
+        - kiểm tra xem hệ thống đã được kích hoạt sử dụng Swap chưa bằng câu lệnh:
+            - Swapon –s
+            - free –m

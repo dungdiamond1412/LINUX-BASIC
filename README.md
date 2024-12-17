@@ -586,3 +586,34 @@
         - kiểm tra xem hệ thống đã được kích hoạt sử dụng Swap chưa bằng câu lệnh:
             - Swapon –s
             - free –m
+## 17. Các công vụ quản lý process như : top, ps, lsof, kill, htop
+- ### Tác dụng
+    - `top`
+        - Lệnh này sẽ giúp bạn xem tổng quan về máy chủ như lượng phần trăm CPU đang sử dụng, mức quá tải qua thông số load average, số lượng tiến trình (processes) đang hoạt động
+    - `ps`
+        - **Process Status** là một tiện ích của hệ điều hành Unix/Linux, được dùng để xem thông tin của các tiến trình đang hoạt động trong hệ thống
+    - `lsof`
+        - dùng để hiển thị danh sách tất cả các tệp tin mà các tiến trình đang mở
+    - `kill`
+        - cho phép bạn thoát khỏi các quá trình không phản hồi một cách dễ dàng
+    - `htop`
+        - là một ứng dụng giám sát quy trình thời gian thực tương tác dành cho các hệ thống giống như Linux/Unix và cũng là một giải pháp thay thế tiện dụng cho lệnh top
+## 18. Tìm hiểu sự khác biệt giữa apt và apt-get
+- `apt` là phiên bản mới hơn của `apt-get`, với giao diện thân thiện hơn, kết hợp lệnh từ `apt-get` và `apt-cache`, hiển thị tiến trình rõ ràng hơn.
+- `apt-get`: Cũ, mạnh mẽ, dùng cho script và hệ thống cũ.
+- `apt`: Đơn giản, hiện đại, tiện dụng hơn cho người dùng thường.
+ ## 19. phân biệt các loại command có trên Linux. Câu lệnh xác định và cách phân biệt (command `type`)
+ - ### Trong Linux, các command (lệnh) được chia thành nhiều loại khác nhau.
+    - Phân loại các loại command
+        |Loại command|Mô tả|Ví dụ|
+        |------------|-----|-----|
+        |Shell Built-in|Lệnh được tích hợp sẵn trong shell. Không cần file thực thi.|`cd`, `echo`, `exit`|
+        |Alias|Tên gọi thay thế được định nghĩa cho một lệnh khác.|ll (alias của ls -l)|
+        |Function|Hàm do người dùng định nghĩa trong shell script.|Tự tạo hàm myfunc()|
+        |Executable (Binary)|Lệnh nằm trong file thực thi trên hệ thống (binaries).|`/bin/ls`, `/usr/bin/cat`|
+        |Keyword|Từ khóa của shell, mang tính đặc biệt.|`if`, `for`, `while`|
+
+    - Câu lệnh xác định loại command
+        - Sử dụng lệnh type để xác định loại của một lệnh: `type <command>`
+
+## 20. tim hiểu cách sử dụng lệnh awk, cut, sed, grep

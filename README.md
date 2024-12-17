@@ -615,5 +615,20 @@
 
     - Câu lệnh xác định loại command
         - Sử dụng lệnh type để xác định loại của một lệnh: `type <command>`
-
-## 20. tim hiểu cách sử dụng lệnh awk, cut, sed, grep
+## 20. tim hiểu cách sử dụng lệnh awk, cut, sed, grep.
+- ###  Cách sử dụng lệnh:
+    - Lệnh `awk`
+        - **Chức năng**: Xử lý văn bản theo dòng và cột dựa trên các điều kiện cụ thể.
+    - Lệnh `cut`
+        - **Chức năng**: Cắt và hiển thị một phần của dòng văn bản dựa trên byte, cột, hoặc delimiter.
+    - Lệnh `sed`
+        - **Chức năng**: Tìm kiếm và thay thế, xóa hoặc chỉnh sửa văn bản.
+    - Lệnh `grep`
+        - **Chức năng**: Tìm kiếm văn bản khớp với pattern (mẫu).
+- ### Tóm tắt:
+    |Lệnh|Chức năng|Ví dụ cơ bản|
+    |----|---------|------------|
+    |`awk`|Xử lý văn bản, cột, điều kiện|`awk '{print $2}' file.txt`|
+    |`cut`|Cắt văn bản theo cột/delimiter|`cut -d',' -f1 file.txt`|
+    |`sed`|Thay thế, chỉnh sửa văn bản|`sed 's/old/new/g' file.txt`|
+    |`grep`|Tìm kiếm văn bản khớp pattern|`grep "hello" file.txt`|
